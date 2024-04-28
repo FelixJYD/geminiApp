@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import Button from "./components/button";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import Loader from "./components/loadder";
+
 
 export default function App() {
   const [permission, requestPermission] = Camera.useCameraPermissions();
@@ -90,7 +90,7 @@ export default function App() {
 
     const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-    const prompt = "¿Puedes decirme si la fruta de la imagen es comestible?";
+    const prompt = "¿Puedes identificar el estado general y nomnbre de la planta? En el caso de detectar signos de enfermedad, ¿podrías mencionar la enfermedad específica detectada y proporcionar algunas recomendaciones para su tratamiento?";
 
     const result = await model.generateContent([prompt, data]);
     setApiResponse(result.response.text());
