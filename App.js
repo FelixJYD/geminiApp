@@ -90,7 +90,7 @@ export default function App() {
 
     const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
 
-    const prompt = "¿Puedes identificar el estado general y nomnbre de la planta? En el caso de detectar signos de enfermedad, ¿podrías mencionar la enfermedad específica detectada y proporcionar algunas recomendaciones para su tratamiento?";
+    const prompt = "¿Puedes identificar si lo que está en la imagen es una planta? En caso de serlo describe el estado general y nombre de la planta, si de detectas signos de enfermedad, ¿Podrías mencionar la enfermedad específica detectada y proporcionar algunas recomendaciones para su tratamiento?";
 
     const result = await model.generateContent([prompt, data]);
     setApiResponse(result.response.text());
@@ -169,14 +169,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#24272e",
+    backgroundColor: "#f7f8fa",
   },
   camera: {
     height: 400,
     width: 320,
     borderRadius: 30,
     overflow: "hidden",
-    borderColor: "#f7f8fa",
+    borderColor: "#0f0f0f",
     borderWidth: 2,
   },
   buttonContainer: {
@@ -197,12 +197,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    backgroundColor: "rgba(255, 255, 255, 0.6)",
     marginTop: 280,
     borderRadius: 30,
   },
   indicatorText: {
-    color: "#f7f8fa",
+    color: "#0f0f0f",
     fontSize: 20,
     marginTop: 20,
   },
@@ -215,14 +215,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   apiResponseContainer: {
-    backgroundColor: "#24272e",
+    backgroundColor: "#f7f8fa",
     borderRadius: 30,
-    borderColor: "#f7f8fa",
+    borderColor: "#0f0f0f",
     borderWidth: 2,
     padding: 20,
   },
   responseText: {
-    color: "#f7f8fa",
+    color: "#0f0f0f",
     fontSize: 22,
   },
 });
